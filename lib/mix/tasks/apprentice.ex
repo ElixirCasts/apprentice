@@ -9,8 +9,7 @@ defmodule Mix.Tasks.Apprentice do
     Your apprentice will watch your files and run some code(tests)
   """
   def run(path) do
-    path = path || "workshop.exs"
-    IO.puts Enum.any? path
+    Mix.Task.run 'app.start'
     Apprentice.run { ["test", "lib"], "*_test.exs" }
   end
 end
