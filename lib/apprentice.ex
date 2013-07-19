@@ -9,7 +9,7 @@ defmodule Apprentice do
   end
 
   def run(watch_files) do
-    { paths, pattern } = watch_files
+    { paths, _ } = watch_files
     watch(paths)
     #I call this the Big Ugly
     Apprentice.Server.start_link(update_files(paths), fn
