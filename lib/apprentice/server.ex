@@ -4,14 +4,14 @@ defmodule Apprentice.Server do
   #########
   # External API
 
-  def start_link(file_manifest, func) do
-    :gen_server.start_link({ :local, :manifest }, __MODULE__, {file_manifest, func }, [])
+  def start_link(file_manifest, func, server // :manifest) do
+    :gen_server.start_link({ :local, server }, __MODULE__, {file_manifest, func }, [])
 
     file_manifest
   end
 
-  def update_files(new_manifest) do
-    :gen_server.cast :manifest, { :updated_files, new_manifest }
+  def update_files(new_manifest, server // :manifest) do
+    :gen_server.cast server, { :updated_files, new_manifest }
   end
 
   #########
