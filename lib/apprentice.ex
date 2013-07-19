@@ -3,7 +3,7 @@ defmodule Apprentice do
 
   def watch(paths) do
     paths |> Enum.each fn(path) ->
-      Port.open { :spawn, '.deps/apprentice/bin/fswatch ./#{path} \'echo "File Changed"\'' },
+      Port.open { :spawn, './deps/apprentice/bin/fswatch ./#{path} \'echo "File Changed"\'' },
       [:stderr_to_stdout, :in, :exit_status, :binary, :stream, { :line, 255 }]
     end
   end
