@@ -2,8 +2,8 @@ defmodule Apprentice do
   import Mix.Utils, only: [extract_files: 2]
 
   def watch(paths) do
-    paths |> Enum.each fn(path) ->
-      Port.open { :spawn, './deps/apprentice/bin/fswatch ./#{path} \'echo "File Changed"\'' },
+    paths |> Enum.map fn(path) ->
+      Port.open { :spawn, '#{__DIR__}/../bin/fswatch ./#{path} \'echo "File Changed"\'' },
       [:stderr_to_stdout, :in, :exit_status, :binary, :stream, { :line, 255 }]
     end
   end
