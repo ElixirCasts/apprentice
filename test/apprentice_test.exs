@@ -4,7 +4,7 @@ defmodule ApprenticeTest do
   use ExUnit.Case
 
   test "starts fswatch as a port" do
-    assert Apprentice.watch(["lib"]) == :ok
+    assert is_port Enum.first(Apprentice.watch(["lib"]))
   end
 
   setup do
