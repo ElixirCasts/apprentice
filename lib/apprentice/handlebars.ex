@@ -1,9 +1,9 @@
 defmodule Apprentice.Handlebars do
   @moduledoc """
-    Currently requires node and handlebars
+    Currently requires node and a node ember precompiler
 
     OSX: Brew install node
-         npm install handlebars -g
+         npm install -g ember-precompile
     Workshop file must define the following:
       "handlebars_template_paths" return List
       "handlebars_output_path" return String
@@ -19,12 +19,13 @@ defmodule Apprentice.Handlebars do
     do_run(paths, ports)
   end
 
+  #TODO Change this to use erjang_js runtime
   def on_change(changed_files, all_files) do
     Enum.each changed_files, fn({file, _}) ->
       IO.puts "Your apprentice is compiling the template: #{file}"
       output_path = Apprentice.Workshop.handlebars_output_path
       template_name = Path.basename file, ".handlebars"
-      System.cmd("handlebars #{file} -f #{output_path}/#{template_name}.js")
+      System.cmd("ember-precompile #{file} -f #{output_path}/#{template_name}.js")
     end
   end
 
