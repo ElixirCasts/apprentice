@@ -11,7 +11,7 @@ and `Apprentice.Handlebars`
 Add it to your deps
 
 ```elixir
-{ :apprentice, github: "joeyjoejoejr/apprentice" }
+{ :apprentice, github: "ElixirCasts/apprentice" }
 ```
 
 Install and edit the `workshop.exs` template
