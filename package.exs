@@ -5,7 +5,9 @@ Expm.Package.new(
   keywords: ["test", "autotest"],
   maintainers: [[name: "Joe Jackson",
                  email: "joe.jackson@scimedsolutions.com"],
-                [name: "Michael Simpson"],
-  repositories: [[github: "joeyjoejoejr/apprentice"]],
+                [name: "Michael Simpson"
+                 email: "mjs2600@gmail.com"]],
+  repositories: [[github: "joeyjoejoejr/apprentice"]
+                 [github: "ElixirCasts/apprentice"],
   platforms: ["OSX"]
 )
