@@ -6,7 +6,7 @@ defmodule ApprenticeServerTest do
   test "returns multiple files" do
     mock_files = [{ "no_op/file_path", { { 1, 2, 3 }, { 4, 5, 6 } } },
                   { "no_op/not_changed", { { 1, 2, 3 }, { 4, 5, 6 } } }]
-    Apprentice.Server.start_link(mock_files, fn -> :noop end, :test)
+    Apprentice.Server.start_link(mock_files, :test, fn -> :noop end)
     new_manifest = [{ "no_op/file_path", { { 1, 2, 3 }, { 4, 5, 7 } } },
                     { "no_op/not_changed", { { 1, 2, 3 }, { 4, 5, 6 } } },
                     { "no_op/new", { { 1, 2, 3 }, { 4, 5, 6 } } }]
