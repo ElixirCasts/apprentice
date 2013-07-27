@@ -8,6 +8,6 @@ Expm.Package.new(
                 [name: "Michael Simpson"
                  email: "mjs2600@gmail.com"]],
   repositories: [[github: "joeyjoejoejr/apprentice"]
-                 [github: "ElixirCasts/apprentice"],
+                 [github: "ElixirCasts/apprentice"]],
   platforms: ["OSX"]
 )
