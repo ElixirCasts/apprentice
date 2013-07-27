@@ -15,4 +15,13 @@ defmodule Apprentice.Workshop do
   # def handlebars_output_path do
   #   "tmp"
   # end
+
+  # def scribe_template_paths do
+  #   ["tmp"]
+  # end
+
+  # def scribe_output_path do
+  #   "tmp"
+  # end
+
 end
