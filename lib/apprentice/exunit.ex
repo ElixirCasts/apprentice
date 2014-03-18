@@ -10,11 +10,11 @@ defmodule Apprentice.ExUnit do
   end
 
   def on_change(changed, manifest) do
-    loaded = Enum.map(changed, file_to_run(&1, manifest))
+    loaded = Enum.map(changed, file_to_run(&(&1), manifest))
     |>
     Enum.filter(fn(x) -> x end)
     |>
-    Enum.map(Code.load_file(&1))
+    Enum.map(Code.load_file(&(&1)))
     |>
     run_files(manifest)
   end
