@@ -4,7 +4,7 @@ defmodule Apprentice.Mixfile do
   def project do
     [ app: :apprentice,
       version: "0.0.2",
-      elixir: "~> 0.10.1-dev",
+      elixir: "~> 0.12.5",
       deps: deps ]
   end
 
